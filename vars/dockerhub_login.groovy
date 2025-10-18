@@ -1,4 +1,4 @@
-def login(String id){
+def call(String id){
   echo 'This is Dockerhub login stage'
   withCredentials([usernamePassword(credentialsId: ${id}, usernameVariable: ${username}, passwordVariable: ${password})]) {
   sh 'docker login -u ${username} -p ${password}'
