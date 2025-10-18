@@ -1,0 +1,7 @@
+def login(String id, String username, String password){
+  echo 'This is Dockerhub login stage'
+  withCredentials([usernamePassword(credentialsId: '${id}', usernameVariable: '${username}', passwordVariable: '${password}')]) {
+    sh 'docker login -u $username -p $password'
+  }
+  echo 'Login to Dockerhub'
+}
